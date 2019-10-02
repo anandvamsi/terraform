@@ -16,7 +16,8 @@ Terraform has "Planning" steo where it generates the exeution plan,Plan will be 
 when you execute apply
 Terraform let you to avoid any suprises when Terraform manipulates the infra
 terraform apply
-Understanding the terraform state files.
+Understanding the terraform state files
+data blocks
 
 Use cases:Spinning up of docker container from image using terraform.
 Use cases:Create a instance withh key_name(already exist)
@@ -52,9 +53,27 @@ lifecycle option
 		 - Bucket creation
 		 - Bucket life cycle creation 
 
+data blocks:
+-----------------
+data block fetch the data from the aws acconnt.
+example:
+	data "aws_ami" "ubuntu"
+	{
+	most_recent = true
+	
+	filter {
+	name = "name"
+	values = []
+	}
+	filter {
+	name = "virtualization-type"
+	values = ["hvm"]
+	}
+	
+	owners = ["<owner-id>"]
+}
 
-
-
+The value can be referred from aws_ami.ubuntu.id
 
 
 
