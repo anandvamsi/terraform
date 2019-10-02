@@ -329,6 +329,24 @@ A resource block declares a resource of a given type ("aws_instance") with a giv
 Note: Each resource type in turn belongs to a provider,
 
 
+Syntax for respources
+---------------------------
+resource "aws_route_table" "<variable_of_block>" {
+< attributes of aws_route_tables >
+< attributes of aws_route_tables >
+< attributes of aws_route_tables >
+
+		block1 {
+		}
+
+		block2 {
+			}
+}
+
+}
+
+
+
 Stages in the terraform
 ---------------------------
 
