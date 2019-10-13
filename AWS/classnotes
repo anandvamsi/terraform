@@ -10,6 +10,7 @@ Understanding the providers,Resources and variables,output
 Writing terraform files.
 Stages of execution 
 file Associated with terraform 
+Phases in terraform 
 terraform init
 terraform validate
 terraform plan
@@ -137,6 +138,13 @@ Files associated with terrafform
 *.tfstate - where state is stored.
 .terraform/ - plugin,local context
 
+
+Phases in terraform 
+----------------------
+init  Intialize a terraform working directory
+plan  Generate and show an execution plan 
+Apply Builds and changes infrastrucre 
+Destory Destroy terraform managed inra
 
 terraform state show
 ----------------------------
