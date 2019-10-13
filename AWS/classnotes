@@ -9,6 +9,7 @@ Part2.
 Understanding the providers,Resources and variables,output
 Writing terraform files.
 Stages of execution 
+file Associated with terraform 
 terraform init
 terraform validate
 terraform plan
@@ -127,6 +128,14 @@ Outputs:
 container_name = "myblog"
 ip_address = "172.17.0.2"
 
+
+
+Files associated with terrafform
+---------------------------------
+*.tf - plan files that define resources,variables,outputs,modules etc
+*.tfvars - variables files providing values,oftem sensitive.
+*.tfstate - where state is stored.
+.terraform/ - plugin,local context
 
 
 terraform state show
