@@ -38,6 +38,10 @@ Usecase: create IAM users in terraform
 
 
 ----------------------------------------------------------
+
+
+
+
 Day 2
 
 
@@ -205,7 +209,12 @@ resource "digitalocean_droplet" "db" {
 By adding the ignore_changes  parameter to the lifecycle  block, we can tell our Terraform resource definition to ignore any changes to the image  field. This makes sure that Terraform does not attempt to reprovision the resource whenever the image changes
 
 
+Introduction
+--------------------
 
+An unambiguous best practice for systems is to codify your infrastructure in a repeatable text format, 
+rather than clicks in a UI. The common name for this is Infrastructure as Code.
+By far, the two most popular ways to do this, especially in AWS, are Terraform and CloudFormation
 
 
 
