@@ -698,8 +698,13 @@ solution
 root@centos7-jen terraform]# ntpdate pool.ntp.org
  9 May 19:39:24 ntpdate[29017]: step time server 123.108.200.124 offset 3254.804513 sec
 
+---------------------------------------------------------------------------------------------------
+Error:
+Error getting plugins: module root: 1 error(s) occurred:
+* Unknown root level key: response
 
-
+THis is due to old version of terraform
+Download the latest version terraform 0.12
 
 
 Terraform notes
