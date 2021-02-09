@@ -16,6 +16,11 @@ same module declared multiple times
 same resource declared multiple times
 invalid module name
 
+Enabling logging in terraform 
+# Terraform log settings
+export TF_LOG=TRACE
+export TF_LOG_PATH="terraform.txt"
+
 
 
 
