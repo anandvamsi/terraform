@@ -57,3 +57,38 @@ myip = {
   "timeouts" = null /* object */
   "vpc" = true
 }
+
+
+##Code with attribute apply to Another resources
+
+provider "aws" {
+region = "us-west-2"
+}
+
+resource "aws_eip" "new" {
+        vpc = true
+}
+
+resource "aws_security_group" "allow_tls" {
+  name        = "allow_tls"
+  description = "Allow TLS inbound traffic"
+   vpc_id = "vpc-XXXXXXX" ------> Add this if you have different VPC
+   ingress  {
+      description      = "TLS from VPC"
+      from_port        = 443
+      to_port          = 443
+      protocol         = "tcp"
+      cidr_blocks      = ["${aws_eip.new.public_ip}/32"] ------> we have use this legacy syntax in the newer version also.
+    }
+}
+
+
+#Printing the values
+output "myip" {
+value = aws_eip.new.public_ip
+        }
+
+output "SG" {
+value = aws_security_group.allow_tls.id
+}
+~ 
