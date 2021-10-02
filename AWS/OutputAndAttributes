@@ -1,0 +1,59 @@
+Understanding Attributes and output values of terraform
+----------------------------------------------------
+output are values generated after creating the resources
+- more like public IP of the instances
+
+Attributes are more like output will used in next part.
+- it can act as the input for the next resource creation
+
+Terraform document will have the "Attribute Reference" which will show the attributes a
+
+>>>
+provider "aws" {
+region = "us-west-2"
+}
+
+resource "aws_eip" "new" {
+vpc = true
+}
+
+output "myip" {
+value = aws_eip.new.public_ip
+        }
+<<
+
+This will display the attribute public_ip associated with EIP
+if we can display all the attributes 
+
+change the code to >>
+
+output "myip" {
+value = aws_eip.new
+        }
+<<<<
+
+Outputs:
+
+myip = {
+  "address" = tostring(null)
+  "allocation_id" = tostring(null)
+  "associate_with_private_ip" = tostring(null)
+  "association_id" = ""
+  "carrier_ip" = ""
+  "customer_owned_ip" = ""
+  "customer_owned_ipv4_pool" = ""
+  "domain" = "vpc"
+  "id" = "eipalloc-05d53a015f9ec3f68"
+  "instance" = ""
+  "network_border_group" = "us-west-2"
+  "network_interface" = ""
+  "private_dns" = tostring(null)
+  "private_ip" = ""
+  "public_dns" = "ec2-44-233-215-162.us-west-2.compute.amazonaws.com"
+  "public_ip" = "44.233.215.162"
+  "public_ipv4_pool" = "amazon"
+  "tags" = tomap(null) /* of string */
+  "tags_all" = tomap({})
+  "timeouts" = null /* object */
+  "vpc" = true
+}
