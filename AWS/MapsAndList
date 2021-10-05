@@ -1,0 +1,37 @@
+Understand the usecase of maps and list
+------------------------------------
+#Using Maps
+>>>>>>>>>>>>>>>>>>>>>
+resource "aws_instance" "myec2" {
+	ami = "ami-xx"
+	instance_type = var.types["ap-south-1"]
+}
+
+
+variables "types" {
+	
+	type = map
+	default = {
+	us-west-1 = "t2.micro"
+	us-west-2 = "t2.nano"
+	ap-south-1 = "t2.small"
+
+	}
+}
+Note:- THis will spin the instance t2.small.
+<<<<<<<<<<<<<<<<<<<<
+
+##Usings List
+>>>>>>>>>>>>>>>
+resource "aws_instance" "myec2" {
+	ami = "ami-xx"
+	instance_type = var.list[0]
+}
+
+
+variables "list" {
+	type = list
+	default = ["t2.nano","t2.large"]
+}
+
+This will spin the nano instance.
