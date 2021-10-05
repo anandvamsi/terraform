@@ -1,0 +1,12 @@
+
+Overview of Datypes
+===================
+Strings :- seqeunce of unicode characters representing some text like "hello"
+
+list :- sequential list of values identified by their postion
+        ["city1","city2"] 
+
+ map :- a group of values identified by named lables
+ 		{name= "Mable",age=32 }
+
+ numbers = specify a number (more like port numbers..etc)
