@@ -1,0 +1,20 @@
+provider "aws" {
+region = "us-east-1"
+}
+
+variable "adminuser" {
+type = list
+default = ["dev-admin", "uat-admin", "prod-admin"]
+}
+
+
+
+resource "aws_iam_user" "admins" {
+name =  var.adminuser[count.index]
+count = 3
+}
+
+>>>
+This will create user dev-admin 
+uat-admin
+prod-admin
