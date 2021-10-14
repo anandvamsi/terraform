@@ -1,0 +1,18 @@
+provider "aws" {
+region = "us-east-1"
+}
+
+locals {
+common_tags = {
+        Owners = "Devops team"
+        service = "backend"
+        }
+}
+
+resource "aws_iam_user" "admin1" {
+name = "admin2"
+tags = local.common_tags
+}
+
+>>>>
+This will create IAM user with tags while teaching explain the manual process also.
