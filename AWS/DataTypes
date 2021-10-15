@@ -6,6 +6,32 @@ Strings :- seqeunce of unicode characters representing some text like "hello"
 list :- sequential list of values identified by their postion
         ["city1","city2"] 
 
+
+>>Example code
+
+provider "aws" {
+region = "us-east-1"
+}
+
+variable "adminuser" {
+type = list
+default = ["dev-admin", "uat-admin", "prod-admin"]
+}
+
+resource "aws_iam_user" "user" {
+name  = var.adminuser[0]
+tags = {
+group = "admins"
+
+}
+}
+
+Note:- This will create the dev-admin
+
+
+
+
+
  map :- a group of values identified by named lables
  		{name= "Mable",age=32 }
 
