@@ -16,3 +16,4 @@ Notes::-
 When using command line variables you should declare the varibles in the code
 terraform  plan   -var="username=anand"
 terraform  apply  -var="username=anand"
+terraform  destroy  -var="username=anand"
