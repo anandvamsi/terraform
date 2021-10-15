@@ -67,3 +67,11 @@ variable "template" {
   type = string
   default = "ubuntu18"
 }
+
+
+Notes::-
+Variables set in the file can be overridden at deployment.
+This allows you to reuse the variables file while still customising the configuration at deployment. 
+For example, although set_password is false in the variables file, you could enable it on the command line.
+
+terraform apply -var set_password="true"
