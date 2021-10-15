@@ -1,0 +1,50 @@
+How to enable Terraform logging 
+
+export TF_LOG=trace
+export TF_LOG_PATH=./terraform.log
+
+sample logs
+>>>>
+2021/10/15 11:03:08 [INFO] Terraform version: 0.14.5
+2021/10/15 11:03:08 [INFO] Go runtime version: go1.15.6
+2021/10/15 11:03:08 [INFO] CLI args: []string{"/usr/sbin/terraform", "plan"}
+2021/10/15 11:03:08 [DEBUG] Attempting to open CLI config file: /home/anand/.terraformrc
+2021/10/15 11:03:08 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2021/10/15 11:03:08 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2021/10/15 11:03:08 [DEBUG] ignoring non-existing provider search directory /home/anand/.terraform.d/plugins
+2021/10/15 11:03:08 [DEBUG] ignoring non-existing provider search directory /home/anand/.local/share/terraform/plugins
+2021/10/15 11:03:08 [DEBUG] ignoring non-existing provider search directory /usr/local/share/terraform/plugins
+2021/10/15 11:03:08 [DEBUG] ignoring non-existing provider search directory /usr/share/terraform/plugins
+2021/10/15 11:03:08 [INFO] CLI command args: []string{"plan"}
+2021/10/15 11:03:08 [TRACE] Meta.Backend: no config given or present on disk, so returning nil config
+2021/10/15 11:03:08 [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2021/10/15 11:03:08 [DEBUG] New state was assigned lineage "ccefabae-931c-157d-1790-1a64e7081cdc"
+2021/10/15 11:03:08 [TRACE] Meta.Backend: using default local state only (no backend configuration, and no existing initialized backend)
+2021/10/15 11:03:08 [TRACE] Meta.Backend: instantiated backend of type <nil>
+2021/10/15 11:03:08 [TRACE] providercache.fillMetaCache: scanning directory .terraform/providers
+2021/10/15 11:03:08 [TRACE] getproviders.SearchLocalDirectory: .terraform/providers is a symlink to .terraform/providers
+2021/10/15 11:03:08 [TRACE] getproviders.SearchLocalDirectory: found registry.terraform.io/hashicorp/aws v3.63.0 for linux_amd64 at .terraform/providers/registry.terraform.io/hashicorp/aws/3.63.0/linux_amd64
+2021/10/15 11:03:08 [TRACE] providercache.fillMetaCache: including .terraform/providers/registry.terraform.io/hashicorp/aws/3.63.0/linux_amd64 as a candidate package for registry.terraform.io/hashicorp/aws 3.63.0
+2021/10/15 11:03:13 [DEBUG] checking for provisioner in "."
+2021/10/15 11:03:13 [DEBUG] checking for provisioner in "/usr/sbin"
+2021/10/15 11:03:13 [INFO] Failed to read plugin lock file .terraform/plugins/linux_amd64/lock.json: open .terraform/plugins/linux_amd64/lock.json: no such file or directory
+2021/10/15 11:03:13 [TRACE] Meta.Backend: backend <nil> does not support operations, so wrapping it in a local backend
+2021/10/15 11:03:13 [INFO] backend/local: starting Plan operation
+2021/10/15 11:03:13 [TRACE] backend/local: requesting state manager for workspace "default"
+2021/10/15 11:03:13 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2021/10/15 11:03:13 [TRACE] backend/local: requesting state lock for workspace "default"
+2021/10/15 11:03:13 [TRACE] statemgr.Filesystem: preparing to manage state snapshots at terraform.tfstate
+2021/10/15 11:03:13 [TRACE] statemgr.Filesystem: existing snapshot has lineage "2bade017-20e6-760b-dc8d-c59882107ba6" serial 15
+2021/10/15 11:03:13 [TRACE] statemgr.Filesystem: locking terraform.tfstate using fcntl flock
+2021/10/15 11:03:13 [TRACE] statemgr.Filesystem: writing lock metadata to .terraform.tfstate.lock.info
+2021/10/15 11:03:13 [TRACE] backend/local: reading remote state for workspace "default"
+2021/10/15 11:03:13 [TRACE] statemgr.Filesystem: reading latest snapshot from terraform.tfstate
+2021/10/15 11:03:13 [TRACE] statemgr.Filesystem: read snapshot with lineage "2bade017-20e6-760b-dc8d-c59882107ba6" serial 15
+2021/10/15 11:03:13 [TRACE] backend/local: retrieving local state snapshot for workspace "default"
+2021/10/15 11:03:13 [TRACE] backend/local: building context for current working directory
+2021/10/15 11:03:13 [TRACE] terraform.NewContext: starting
+2021/10/15 11:03:13 [TRACE] terraform.NewContext: loading provider 
+<<<
