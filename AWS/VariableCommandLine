@@ -1,0 +1,18 @@
+provider "aws" {
+region = "us-east-1"
+}
+
+variable "username" {}
+
+
+resource "aws_iam_user" "user" {
+name  = var.username
+  tags = {
+  group = "admins"
+}
+
+
+Notes::-
+When using command line variables you should declare the varibles in the code
+terraform  plan   -var="username=anand"
+terraform  apply  -var="username=anand"
