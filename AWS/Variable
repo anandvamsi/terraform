@@ -1,0 +1,19 @@
+provider "aws" {
+region = "us-east-1"
+}
+
+variable "username" {
+description = "Name of the user"
+default = "anandvamsi"
+
+}
+
+resource "aws_iam_user" "user" {
+    name  = var.username
+tags = {
+    group = "admins"
+      }
+}
+
+>> 
+This will create a iam user with name anandvamsi
