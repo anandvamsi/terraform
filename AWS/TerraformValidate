@@ -1,0 +1,14 @@
+
+Terraform validate will check wheather a configration is syntactically valid 
+It can check various aspects including 
+  - unsupported params
+  - undeclared variables and others
+  
+  resource "aws_instance" "my_ec2" {
+  ami = "ami-xx"
+  instance = "t2.micro"
+  sky  = "blue"
+    }
+    
+   
+ blue is incorrect.
