@@ -1,0 +1,9 @@
+As per the production ready code :- its not advisable to write the code in a single tf file 
+- its always better to split the code as the resources
+- Example - provider will be mentioned in provider.tf
+user creation will be mentioned in iam_user.tf
+Instance creation will be mentioned in instance.tf
+
+
+Advantages
+It helps in segregating the resources as well as in troubleshooting 
