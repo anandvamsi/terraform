@@ -1,0 +1,10 @@
+The generated terraform plan can be saved to a specific path
+
+This plan then be used with apply to be certain only 
+
+terraform plan -out=demopath1
+
+this demopath is a binaryfile not a text file
+
+Now to apply 
+terraform apply demopath1
