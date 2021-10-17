@@ -3,6 +3,12 @@ How to enable Terraform logging
 export TF_LOG=trace
 export TF_LOG_PATH=./terraform.log
 
+
+other options :- TRACE DEBUG INFO WARN and ERROR
+TRACE is the default
+TF_LOG_PATH is optional :- if this is not set we can see the logs in the standard out.
+
+
 sample logs
 >>>>
 2021/10/15 11:03:08 [INFO] Terraform version: 0.14.5
