@@ -342,6 +342,9 @@ provider "aws" {
 
 
 
+
+
+
 Understanding the resource and providers
 ---------------------------------------
 Providers:
@@ -389,6 +392,18 @@ resource "aws_route_table" "<variable_of_block>" {
 }
 
 }
+
+Terminologies
+----------------
+let’s understand a few terminologies around Terraform.
+Providers
+Resources
+Data Sources
+Variables (input, output, local)
+State file
+Meta Arguments
+Functions
+
 
 
 
