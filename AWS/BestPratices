@@ -1,0 +1,3 @@
+1. when dealing with large infrastruture, its better to split into different files 
+2. Terraform having the option to plan only the specific target
+    #terraform plan -target=ec2
