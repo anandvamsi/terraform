@@ -1,0 +1,19 @@
+provider "aws" {
+region = "us-east-1"
+}
+
+locals {
+bucket_name = "mynewbucket1233"
+tags = {
+
+        name = "mybucket"
+        foo = "fass"
+
+}
+
+}
+
+resource "aws_s3_bucket" "state_bucket" {
+bucket = local.bucket_name
+tags = local.tags
+}
