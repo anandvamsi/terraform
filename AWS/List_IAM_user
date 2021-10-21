@@ -18,3 +18,27 @@ count = 3
 This will create user dev-admin 
 uat-admin
 prod-admin
+
+
+--------------------------------------------------------------
+List with using length() function 
+
+provider "aws" {
+  region = "us-east-1"
+}
+
+variable "users" {
+  type    = list
+  default = ["raj", "kiran", "mohan","kumar"]
+}
+
+
+resource "aws_iam_user" "admins" {
+  name  = var.users[count.index]
+  count = length(var.users)
+
+
+}
+
+>>> 
+Advantages no need to mention the count of the users.
