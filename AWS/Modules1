@@ -1,0 +1,21 @@
+
+##main.tf
+provider "aws" {
+region = "us-east-1"
+}
+
+module "iamusers" {
+source = "./modules"
+}
+(base) root@ubuntu-master:~/T-recipes/count-list-length# cat modules/iam_user.tf
+variable "users" {
+  type    = list
+  default = ["raj", "kiran", "mohan","kumar"]
+}
+
+
+resource "aws_iam_user" "admins" {
+  name  = var.users[count.index]
+  count = length(var.users)
+
+
