@@ -1,0 +1,76 @@
+Terraform allows us to have multiple workspace, with each of the workspace we can have different set of env variables associated.
+
+stagging
+- ami-121
+- instance_types= t2.small
+
+
+production 
+- ami-abc123
+- instance_type= t2.large
+
+
+>>workspaces
+terraform workspace -h
+Usage: terraform workspace
+
+  new, list, show, select and delete Terraform workspaces.
+
+Subcommands:
+    delete    Delete a workspace
+    list      List Workspaces
+    new       Create a new workspace
+    select    Select a workspace
+    show      Show the name of the current workspace
+
+
+#To create a new workspace 
+terraform workspace new dev
+Created and switched to workspace "dev"!
+
+You're now on a new, empty workspace. Workspaces isolate their state,
+so if you run "terraform plan" Terraform will not see any existing state
+for this configuration.
+
+
+
+#To switch the workspace 
+terraform select dev 
+
+
+
+
+1. First create 3 works space using terraform command.
+-dev
+-stagging
+-prod
+
+
+cat main.tf
+provider "aws" {
+  region = "us-east-1"
+
+}
+
+resource "aws_instance" "myec2" {
+  ami           = "ami-0c2b8ca1dad447f8a"
+  instance_type = lookup(var.instance_type, terraform.workspace)
+}
+
+variable "instance_type" {
+  type = map(string)
+  default = {
+    default  = "t2.nano"
+    dev      = "t2.micro"
+    stagging = "t2.large"
+
+
+  }
+}
+
+>>>>
+Execute terraform plan each time and change the workspace using terraform workspace select command
+
+
+
+
