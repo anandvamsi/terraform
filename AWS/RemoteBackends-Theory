@@ -1,0 +1,55 @@
+Terraform supports various types of remote backends which can be used to store state data.
+As of now, we storing state date in local and GIT repository
+Depending on remote backends which is being used, there can few features
+
+- Standard backend:- state Storage Locking
+- Enhanced Backed Types :- All features + Remote Management 
+
+
+Using backed s3
+
+terraform {
+  backend  "s3" {
+  bucket = "<bucketname>"
+  region = "" 
+  accesskey =
+  secreatkey  =     
+    
+   }
+ }
+
+Understanding State Lock
+-------------------------
+Whenever you are performing write operation,terraform would lock the state file.
+THis is very important as otherwise during your onging terraform apply operations,if others also try for the same,it would corrupt your state file.
+
+Example;-
+Person A is terminating the RDS resource which has associated rds file.
+Person B has now tried resizing the same RDS resource at the same time.
+
+show them:- for Same code do terraform plan in two windows
+
+
+Intergration with DynamoDB Locking 
+-----------------------------------
+Step1
+- Create  table in DynamoDB
+  - create a PrimaryKey :- LockID
+  
+Step2 
+terraform {
+  backend  "s3" {
+  bucket = "<bucketname>"
+  region = "" 
+  accesskey =
+  secreatkey  =     
+  dynamodb_table = <Mention the one created in the step1>  
+   }
+ }
+
+step3
+  terraform init
+  
+step4:
+    terraform plan
+    Now check the dynamo DB table ;- There will be entry which wil added on.
