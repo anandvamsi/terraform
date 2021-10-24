@@ -1,0 +1,24 @@
+Why we should not code locally 
+- case of system crash
+- collabrative managment 
+
+Files having sensitive information are not the idle solutions to push the Git repository.
+- config files having passwords
+- tfstate files having passwords
+
+
+Using .gitignore
+---------------------
+Files to ignore during the git push
+- .terraform  :- folder will be created when terraform init is run
+- .terrafrm.tfvars :- likely contains sensitive data like username/password and secrets
+- terraform.tfstate :-  should be staores in remote side
+- crash.log :- if terraform crashes, the logs are stored to a file named crash.log
+
+contents of .gitignore files
+----------------------------------
+.terraform 
+*.tfvars
+terraform.tfstate
+
+
