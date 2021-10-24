@@ -1,0 +1,15 @@
+Import
+- There can be chances few of the resources are created manually 
+- There can be changes where few resouurces got created before using terraform 
+
+
+Terrafom import will import the existing resources which are not created using terraform .
+Step1:- Create a terraform config file using existing attributes of the resources
+        Go with tags of the resource
+
+step2:- terraform plan
+step3:- terraform import aws_instance.myec2 <instance-id>
+
+Now check the terraform state file.
+---------------Import process is completed.-------------------------
+step4:- Now modify the attribt
