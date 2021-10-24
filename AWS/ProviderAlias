@@ -1,0 +1,25 @@
+Imagine a case where you want to create resources in different region using same code 
+one EIP needs to be created in ap-south-1
+one EIP needs to be created in us-west-2
+
+provider "aws" {
+region = "us-west-2"
+}
+
+
+provider "aws" {
+alias = "mumbai"
+region = "us-south-1"
+}
+
+-------------
+resource "aws_eip" "eip" {
+vpc = true
+}
+
+resource "aws_eip" "eip01" {
+vpc = "true"
+provider = "aws.mumbai
+
+"
+}
