@@ -1,0 +1,20 @@
+
+List the resouces created 
+#terraforms state list
+
+when you want to create modify the resource without destorying the resource
+terraform state mv aws_instance.webapp aws_instance.myec2
+
+when you want to view the state file which is the remote backed.// when you want to download and output the state from remote state.
+terraform state pull
+
+Remove:- 
+The terraform state rm command is used to remove items from the terraform state
+Items removed from terraform state are not physically destroyed.
+Items removed from terraform state are only no longer managed by terraform
+Example:- if you remove an AWS instance from the state, the AWS instance will continue running but terraform plan will no longer see the state
+terraform state rm aws_intance.webapp
+
+state show
+  :- To show the attributes of the resources.
+terraform state show aws_instance.webapp
