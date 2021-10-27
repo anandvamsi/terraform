@@ -1,0 +1,46 @@
+Imagine a case where we have multiple profiles to deploy 
+
+-use case 1;- Launch ec2 instance in two different regions
+-use case 2:-  Launch ec2 instances in two different accounts
+
+
+usecase 1:-
+provider "aws" {
+  region = "us-west-1"
+}
+
+provider "aws" {
+  alias = mumbai
+  region = "us-west-2"
+}
+
+>>>> In the resources.tf>>>>
+resouce "aws_eip" "myeip" {
+vpc = "true"
+}
+
+resources "aws_eip" "myeip02" {
+vpc = true
+provider = "aws.mumbai"
+}
+-----------------------------------------------------------------------------------------------
+
+
+usecase 2:- Launching resources in multiple accounts
+
+provider "aws" {
+region = us-west-1
+}
+
+provide "aws" {
+  alias = "aws02"
+  region = "ap-south-1"
+  profile = "newaccount02"
+}
+
+ In the resources.tf
+ 
+ resouces "aws_eip" "myeip02" {
+ vpc = "true"
+ provider = aws.aws02 
+ }
