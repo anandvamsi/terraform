@@ -65,3 +65,25 @@ step3
 step4:
     terraform plan
     Now check the dynamo DB table ;- There will be entry which wil added on.
+
+
+
+>>Execute the terraform plan in two consoles at the same time you will see an error :-
+
+end# terraform plan
+Acquiring state lock. This may take a few moments...
+
+Error: Error locking state: Error acquiring the state lock: ConditionalCheckFailedException: The conditional request failed
+Lock Info:
+  ID:        779225df-54f6-3d78-3941-a2cea19c699d
+  Path:      testanand12343/newdata
+  Operation: OperationTypePlan
+  Who:       root@ubuntu-master
+  Version:   0.14.5
+  Created:   2021-10-28 06:11:25.048685137 +0000 UTC
+  Info:
+
+
+Terraform acquires a state lock to protect the state from being written
+by multiple users at the same time. Please resolve the issue above and try
+again. For most commands, you can d
