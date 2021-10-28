@@ -5,18 +5,30 @@ Depending on remote backends which is being used, there can few features
 - Standard backend:- state Storage Locking
 - Enhanced Backed Types :- All features + Remote Management 
 
+Issues without remote backends
+---------------------------------
+Concurrency: If 2 or more developers are working in the stack, they won’t see the other state until it’s pushed to the repository
+
+Automated Deployment: A CI tool that deploys the stack automatically would need to commit the new state file to the repository
+
+Easily corruptible: In case of a merge conflict or human error, the state file can be corrupted or gone. If this happens, the stack becomes unmaintainable,
+resources need to be manually/individually imported or cleaned and then re-created with terraform
+
+
+
 
 Using backed s3
-
+---------------------
+provider "aws" {
+region = "us-east-1"
+}
 terraform {
-  backend  "s3" {
-  bucket = "<bucketname>"
-  region = "" 
-  accesskey =
-  secreatkey  =     
-    
-   }
- }
+        backend  "s3" {
+        bucket = "testanand12343"
+        region = "us-east-1"
+        key =  "newdata"
+        }
+}
 
 Understanding State Lock
 -------------------------
