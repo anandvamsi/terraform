@@ -1,0 +1,2 @@
+Terrafom has force unlock command that manually unlock the comamand 
+terraform force unlock LOCK_ID
