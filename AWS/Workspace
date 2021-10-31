@@ -35,7 +35,7 @@ for this configuration.
 
 
 #To switch the workspace 
-terraform select dev 
+terraform workspace select dev 
 
 
 
@@ -72,5 +72,7 @@ variable "instance_type" {
 Execute terraform plan each time and change the workspace using terraform workspace select command
 
 
+Notes;:-
+State file Directory = terraform.tfstate.d
 
 
