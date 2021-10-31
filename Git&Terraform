@@ -1,0 +1,28 @@
+case 1
+
+While pushing the code to git use .gitignore file to ignore few files
+- like tfstate files
+- tfvars ..etc
+
+case 2
+Arbitray git reposiotries can be used by prefixing the address with special 
+git:: prefix
+
+After the prefix,any valid Git URL can be specified to select the protocool
+supported by Git.
+
+module "vpc" {
+  source = "git::"
+}
+
+module "storage" {
+  source = "git:ssh//"
+}
+
+Note:- Terrafom will clone the different branch, if you want to reference to 
+a branch you can reference via ref argument 
+example;-
+
+module "vpc" {
+source "git::https://example.com/vpc.git?ref=v12.0"
+}
