@@ -1,3 +1,32 @@
+Notes;-
+If you have variables with undefined values, it will not directly result into
+any error.
+Terraform will ask you the values associated with them
+
+
+Environment varaibles
+must start with TF_VAR
+- examples export TF_VAR_region=us-west-1
+- examples export TF_ami
+
+
+variables Definition Precedence
+-------------------------------------
+
+Terraform loads varibles in the following order, which later sources taking
+procedence over ealier ones;
+
+- Environment variables
+- The terraform.tfvars if present
+- terraform.tfvars.json fle if present
+- Any *.auto.tfvars or *.auto.tfvars.json processed in lexical order of their
+filenames
+- Any -var and -var-file options on the command-line in the oder they are provdider
+
+
+
+
+
 provider "aws" {
 region = "us-east-1"
 }
