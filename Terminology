@@ -1,0 +1,9 @@
+resouce "aws_instance" "example" {
+ami = "ami-xx"
+instance_type = "t2.micro"
+}
+
+aws_instance = Its is called the resouce type
+example:- is the local resourc
+ami is the argument variable
+ami-xx is the argument value
