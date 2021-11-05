@@ -1,3 +1,6 @@
+Terraform starts with a single workspace named "default".
+This workspace is special both because it is the default and also because it cannot ever be deleted
+
 Terraform allows us to have multiple workspace, with each of the workspace we can have different set of env variables associated.
 
 stagging
