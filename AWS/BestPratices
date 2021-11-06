@@ -5,3 +5,5 @@
 
 3..tfvars files, which are likely to contain sensitive data, such as passwords, private keys, and other secrets. These should not be part of version # control as they are data points that are potentially sensitive and subject to change depending on the environment.
 Along with this, even tfstate files should not be committed. It can contain sensitive data. Instead, it is recommended to have tfstate to a remote backend.
+
+4.Which of the below commands will rename an EC2 instance without destroying and recreating it? :- terraform state mv
