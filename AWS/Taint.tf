@@ -41,3 +41,7 @@ Terraform will perform the following actions:
     }
 
 Plan: 1 to add, 0 to change, 1 to destroy.
+        
+    
+  ##Terraform taint with Modules
+    Taint the resource "aws_instance" "baz" resource that lives in module bar which lives in module foo. :- terraform taint module.foo.module.bar.aws_instance
