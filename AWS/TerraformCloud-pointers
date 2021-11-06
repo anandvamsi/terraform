@@ -1,0 +1,10 @@
+Terraform Cloud supports the following VCS providers as of November 2020:
+  - GitHub
+  - GitHub.com (OAuth)
+  - GitHub Enterprise
+  - GitLab.com
+  - GitLab EE and CE
+  - Bitbucket Cloud
+  - Bitbucket Server
+  - Azure DevOps Server
+  - Azure DevOps Services
