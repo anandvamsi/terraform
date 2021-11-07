@@ -1,0 +1,7 @@
+The core Terraform workflow has three steps:
+
+  - Write - Author infrastructure as code.
+
+  - Plan - Preview changes before applying.
+
+  - Apply - Provision reproducible infrastructure.
