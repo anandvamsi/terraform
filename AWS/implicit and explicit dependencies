@@ -1,0 +1,10 @@
+Implicit dependency:
+By studying the resource attributes used in interpolation expressions, Terraform can automatically infer when one resource depends on another.
+Terraform uses this dependency information to determine the correct order in which to create the different resources.
+Implicit dependencies via interpolation expressions are the primary way to inform Terraform about these relationships, 
+and should be used whenever possible.
+
+
+Explicit dependency:
+Sometimes there are dependencies between resources that are not visible to Terraform.
+The depends_on argument is accepted by any resource and accepts a list of resources to create explicit dependencies for.
