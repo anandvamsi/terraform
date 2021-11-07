@@ -1,0 +1,8 @@
+Following variables should be used
+
+count
+depends_on
+for_each
+lifecycle
+providers
+source
