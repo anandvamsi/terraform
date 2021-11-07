@@ -19,3 +19,12 @@ resource "aws_iam_user" "admins" {
   count = length(var.users)
 
 
+>>>>>>>>>>>>>>>>>>>>>.
+Notes;- To get external modules
+
+module "consul" {
+  source = "hashicorp/consul/aws"
+  version = "0.1.0"
+}
+terraform init command will download and cache any modules referenced by a configuration.
+
