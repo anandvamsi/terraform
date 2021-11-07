@@ -79,3 +79,26 @@ Notes;:-
 State file Directory = terraform.tfstate.d
 
 
+
+##Workspace commandline
+
+To list the work space
+	- terraform workspace list
+Create a new work space
+	- terraform workspace new <name>
+Current workspace
+	- terraform workspace show
+To delete the workspace
+	- terraform workspace delete <workspace name>
+
+Note we cannot delete the default workspace.
+
+Usings tags on workspace
+resource "aws_instance" "example" {
+  tags = {
+    Name = "web - ${terraform.workspace}"
+  }
+
+  # ... other arguments
+}
+
