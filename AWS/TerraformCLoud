@@ -7,3 +7,5 @@ Advanatages
 - Clusterin
 
 Team and Goverance features are not available for terraform cloud for free
+
+In terraform cloud :- only 1 VCS repo can be configured.
