@@ -1,0 +1,15 @@
+
+Terraform fmt 
+The canonical format may change in minor ways between Terraform versions, so after upgrading Terraform we recommend to 
+proactively run terraform fmt on your modules along with any other changes you are making to adopt the new version.
+
+To see the difference in the terraform fmt
+terraform fmt -diff
+
+TO fmt the subsquent folders also.
+terraform fmt -recursive
+
+
+You are formatting configuration files in a lot of directories and you don’t
+want to see the list of file changes. What is the flag that you should use?
+terraform fmt -list=false
