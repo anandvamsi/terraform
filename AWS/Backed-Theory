@@ -3,3 +3,17 @@ what is backends
 A "backend" in Terraform determines how state is loaded and how an operation such as apply is executed.
 This abstraction enables non-local file state storage, remote execution, etc.
 By default, Terraform uses the "local" backend, which is the normal behavior of Terraform
+
+By default tfstate file will present in working directory.
+
+if you want different tfstate file
+>>>>>>>>>>>>>>>>>>
+provider "aws" {
+  region = "us-west-2"
+}
+
+terraform {
+  backend "local" {
+     path = "/tmp/mydata.tfstate"
+    }
+}
