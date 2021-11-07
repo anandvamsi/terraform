@@ -1,0 +1,5 @@
+
+
+Notes:-
+After executing a terraform plan, you notice that a resource has a tilde (~) next to it. What does this infer?
+resources will be updated in place.
