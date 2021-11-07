@@ -1,0 +1,5 @@
+what is backends
+------------------
+A "backend" in Terraform determines how state is loaded and how an operation such as apply is executed.
+This abstraction enables non-local file state storage, remote execution, etc.
+By default, Terraform uses the "local" backend, which is the normal behavior of Terraform
