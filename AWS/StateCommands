@@ -15,6 +15,12 @@ Items removed from terraform state are only no longer managed by terraform
 Example:- if you remove an AWS instance from the state, the AWS instance will continue running but terraform plan will no longer see the state
 terraform state rm aws_intance.webapp
 
+
+
+
+
 state show
   :- To show the attributes of the resources.
 terraform state show aws_instance.webapp
+
+
