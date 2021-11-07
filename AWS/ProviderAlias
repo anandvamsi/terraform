@@ -23,3 +23,11 @@ provider = "aws.mumbai
 
 "
 }
+
+
+usecase:-
+Why do we need multiple providers:-
+Some of the example scenarios:
+a. multiple regions for a cloud platform
+b. targeting multiple Docker hosts
+c. multiple Consul hosts, etc.
