@@ -1,3 +1,8 @@
+Output 
+output variables as a way to organize data to be easily queried and shown back to the Terraform user.
+Outputs are a way to tell Terraform what data is important. 
+This data is outputted when apply is called, and can be queried using the terraform output command.
+
 Understanding Attributes and output values of terraform
 ----------------------------------------------------
 output are values generated after creating the resources
