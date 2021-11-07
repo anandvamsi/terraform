@@ -1,0 +1,6 @@
+
+##How to upgrade the provider
+terraform init --upgrade
+
+It upgrade to the latest acceptable version of each provider
+This command also upgrades to the latest versions of all Terraform modules.
