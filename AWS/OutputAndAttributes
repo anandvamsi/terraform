@@ -96,4 +96,16 @@ value = aws_eip.new.public_ip
 output "SG" {
 value = aws_security_group.allow_tls.id
 }
-~ 
+
+
+>>>>>
+There is a command where you can output using terraform command
+#terraform output users
+[
+  "raj1",
+  "kiran1",
+  "mohan1",
+  "kumar1",
+  "sandeep1",
+]
+
