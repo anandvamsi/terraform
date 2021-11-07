@@ -1,0 +1,17 @@
+resource "docker_image" "nginx" {
+    name = "nginx:latest"
+    keep_locally = false
+}
+
+resource "docker_container" "nginx" {
+    image = docker_image.nginx.latest
+    name = "nginxtutorial"
+    ports {
+        internal = 80
+        external = 8080
+    }
+    upload {
+        source = "${abspath(path.root)}/files/index.html"
+        file = "/usr/share/nginx/html/index.html"
+    }
+}
