@@ -1,0 +1,7 @@
+
+
+
+Install third-party providers by placing their plugin executables in the user plugins directory.
+The user plugins directory is in one of the following locations, depending on the host operating system
+Once a plugin is installed, terraform init can initialize it normally.
+You must run this command from the directory where the configuration files are located.
