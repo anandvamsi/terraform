@@ -1,0 +1,13 @@
+
+Sentinal //Policy as code
+Sentinel is an embedded policy-as-code framework integrated with the HashiCorp Enterprise products. 
+It enables fine-grained, logic-based policy decisions, and can be extended to use information from external sources.
+
+Benefits of Sentinal
+-----------------------
+
+Codifying policy removes the need for ticketing queues, without sacrificing enforcement.
+
+One of the other benefits of Sentinel is that it also has a full testing framework.
+
+Avoiding a ticketing workflow allows organizations to provide more self-service capabilities and end-to-end automation, minimizing the friction for developers and operators
