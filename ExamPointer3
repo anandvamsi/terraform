@@ -1,0 +1,33 @@
+check::Terraform Functions 
+- element and lookup
+
+check::count and coun_index
+
+Terraform Lock
+----------------
+if supported by your backend, Terraform will lock your state for all operations that could write state
+Terrafrom has force-unlock command to manually unlock the state if unlocking failed
+
+
+Usecase:- Resource Deleted out of Terraform
+--------------------------------------------
+someone has changed EC2 instance_type from t2.micro  to t2.large
+someone has terminated the EC2 instnace
+
+In case 1: Terraform current state will t2.large and the desired state is t2.micro It will change back instance type t2.micro
+Answer 2: Terraform will create new instnace
+
+
+Resource Block
+Each resource block desribes  one or more infrastrucre objects such as virtual n/ws compute instnces or higher level components.
+Example resource name :- aws_instance
+give name :- web
+
+resource "aws_instance" "web" {
+  }
+
+
+Miscellaneous Pointers
+Terraform does not require fo as prerequiste
+It works well in windows,Linux,Mac
+Window server is not Mandatory
