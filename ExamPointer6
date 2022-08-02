@@ -1,0 +1,96 @@
+--------------
+Fetcing values from maps
+
+var.ami_ids["mumbai"]
+
+varaible "ami_ids" {
+  type - "map"
+  default = {
+       mumbai = "image-abc"
+       hyderabad = "new image"
+       states = "image-xyx"    
+
+  }
+
+}
+
+Terraform and git 
+Ignore 
+- terraform.tfstate files(May contain state files)
+- *.tfstate()
+
+
+Arbitary Git repository can be used by prefixing the address with special git::
+  module "vpc" {
+  source = "git://<git url>"
+  }
+
+  By default terraform will clone the default branch(reference by HEAD)
+ The values of ref argument can be any refence that would be accepeted by the git checkout command,inlcude branch and tag_name
+
+
+ #Terraform workspace
+----------------------------
+ state file directory = Terraform.tfstate.d
+ TO create a new workspace # terraform workspace new mydata
+ switch to specific workspace terraform workspace select mysdata1
+
+ Depedency Types :- Two types
+ - Implicit 
+ with Implicit Dependency , Terraform can automatically find the reference of the object, and create an implicit ordering requirment b/w the two resources
+
+ resource "aws_eip" "myeip" {
+  vpc = "true"
+
+ }
+ resources "aws_instance" "myec2"{
+instance_types = "t2.micro"
+public_ip = aws_eip.myip.private_ip
+ }
+
+ Explicit Dependency
+ -----------------------
+
+ resource "aws_s3" "example" {
+acl = private
+
+ }
+
+ resource "aws_instance" "myec2" {
+  depends_on [aws_S3_bucket.example]
+
+ }
+
+
+ Terraform state commands 
+ Terraform state list
+ Terraform state mv
+ terraform state pull
+ terraform state rm ;; :- Remove itesm from state file
+ terraform state show ::- show the attributes of single resources in terraform state
+
+
+ Terraform plan -destory:: will preview the resouces which are going to destroy 
+
+
+ Lookup :- retrives the values of single element from a map
+ lookup(map,key,default)
+
+#Terraform refresh
+ Terraform init and terraform import does not run refresh commands 
+ Array Datatype is not supported 
+
+#variables
+Various varibla definition files will be loaded automaticall in terraform , These include
+Terraform.tfvars
+Terraform.tfvars.json
+Any files with names ending with .auto.tfvar.json
+
+
+Terraform init -upgrade will uprade to existing plugins 
+
+Syntax in versions
+----------------
+Difference is 0.11 and 0.12
+${var.instance_types} :-0.11
+var.instance_type :- 0.12
