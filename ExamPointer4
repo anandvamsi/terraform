@@ -1,0 +1,48 @@
+#Terraform Graph
+-------------------
+Command is used to generate visual representation of either a configration or execution plan
+The output of terraform graph is the DOT format, which can easily be converted to an image
+
+Splat Expression
+Splat Expression allows us to get a list all attributes
+
+output "arns" {
+value = aws_iam_user.lb[*].arn
+
+}
+
+
+Provider configration
+----------------------
+Provider configration block is not Mandatory for all the terraform configrations
+
+example:-
+locals {
+arr = ["values1","values2"]
+
+}
+
+output "test" {
+value = local.arr
+}
+
+Terraform ouput
+Terraform output command is used to extract the values of an output variable from the state file
+terrform ouput iam_names
+{}
+
+Infrastrcuture as code tools
+- Automation
+- Versionin 
+- Resuablity 
+
+Terraform,cloudformation,Azure Resource Manager
+Google Cloud Deployment Manager
+
+
+Terraform function
+Slice is not the part of the string function 
+string functions :: join,split,chomp,format 
+
+
+
