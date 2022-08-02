@@ -1,0 +1,33 @@
+Terraform-init
+When you do terraform init it downloads the modules from the provider (Intialization downloads and install the provide plugin)
+It will not create any terraform files
+
+
+Terraform plan
+I will Create a execute plan :- it will not modify the infra
+Terraform perform refresh unless explicity disabled and determines what action is are reqires necessary to achive the desired state 
+
+Terrafomr apply 
+Apply changes for destired state
+- may add, delete or modify changes
+
+Terraform refresh
+used to reconcile the state terraform knows about the real world infrastrcutre 
+This does not modify and infrastrcutre but modify the state file
+
+Terraform destroy
+command is used destroy the terraform managed infra
+Terraform destroy is not the only command through infra can be destroyed 
+
+Terraform fmt
+command used to rewrite terraform config file to a cononical format style 
+to have proper style of code
+
+Terraform validate
+command validate that config files in a directory, validate runs check that verify wheather configration is syntactically valid.
+it can run before the terraform plan
+Validation requires an intialized working directory with any reference plygin and modules installed 
+
+Terraform provisioner
+Model specific actions on the local machine or on a remote machine 
+should be inside the resource block.
