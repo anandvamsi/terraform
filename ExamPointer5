@@ -1,0 +1,77 @@
+
+Terraform Enterprise and Terraform Cloud
+--------------------------------------------------
+Terraform Enterprise provides sevral added advanatages compred to Terraform cloud
+
+some of these include:
+Single signon
+Auditing
+Private DataCenter
+Cluster
+
+Team and Goverance is not available under the Terraform Cloud free(paid) version
+
+
+#Environment variables
+TF_VAR_name
+
+
+#Structural Data Types
+----------------------
+Different Groups to link together :- we need to go with object Data type
+
+
+Backend configration 
+- First time configration 
+        When configuring a backedn fror the first time (mocing from node fined backed to explictly configuring one)
+        Terraform will give you option to migrate your state to new backend
+
+
+
+#Terraform taint
+Once the reason is tained , it will forcing to be destroyed and recreated on next apply 
+once the reason is tained , the next plan will show the resource will be destroyed .
+
+#Provisioner local
+Invokes a process on the machine runnin terraform not on the resources
+
+
+#Provisioner 
+By default, provisoner that fail will also cause Terraform apply to fail
+This on_failure can be chaned this 
+on_failure :- continue / fail
+continue :- Ignore the erro and continye with Creation/destruction
+fail:- Raise an error and stop applying 
+
+
+#variables precedence
+--------------------
+Environment variables
+The terraform.tfvars files if present
+The terraform.tfvars.json files if present
+Any *.auto.tfvars or *.auto.tfvars jsonfiles , processed in lexical order of theri filenames
+Any -var and -var file options on command lin in the otder they provided
+
+If the same variable is assigned multiple values, Terraform uses the last values it finds.
+
+
+#Terraform localbackend
+------------------
+The local backed stores state on the local-filesystem , local the the state using system APIs and preform operation locally
+By default, Terraform uses the local backend which is the normal behavior of Terraform you used to.
+
+terraform {
+    backend "local"
+    path = "/path/to/backed"
+}
+
+
+#Required version
+----------------
+This denotes the required version of the terraform , if the running version of Terraform doest't match the constran specified, Terraform will produce and error
+and exist without taking anyfurther actions 
+
+Terraform {
+required_version = > "0.12.0"
+
+}
