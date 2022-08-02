@@ -1,0 +1,83 @@
+
+Pointers2
+
+#Debugging  Terraform 
+Terraform has detaied logs that can be enabled by settin TG_LOG env variable to any values
+Log levels :- TRACE,DEBUG, INFO,WARN or ERROR
+
+TF_LOG_PATH :- to persist logged output 
+
+
+Terraform Import
+Is able to import existing infrastrcutrere
+This allows you take you take resources that you have created by somer other means  and bring it under terraform management 
+current implmentation of terraform import can only import resources into the state it does not generate configration 
+Beacause of this it is necesseary to write resource configration manually for the resource to which the imporrted object will be mapped 
+
+Syntax
+Terraform import aws_instance.myec2instance-id
+
+
+Local-values
+local values assign name to an expression, allowing it to be used multiple times within a module without repeating it
+Best Practice:- It recommends to group together logically related local values into a single block, particulary if they depend each other
+
+Data types in terraform
+String  :- sequence of unicode character represetin some text like "hello"
+list :- ["mumbai", "singpore","usa"]
+map:-  agroup of values identified by name lables like 
+           {name = "marble"
+            age=62 }
+number:- 200
+
+Terraform workspace
+Terraform allows us to have multiple workspaces; with each other , we can have have a different set of env variables associated
+Workspace sllow multiple state files for each config 
+
+
+Terraform modules
+we can centrailize the terraform resouces and can call out from TF files whenever required
+A root module can invoke child module
+
+
+Module :- Accessing Output values
+    The resource defined in a moulde are encapsulated, so that calling modules cannot cannot access there attributes
+    However the child module can declare output values to selectively export certain values to be accessed by calling module
+
+Output "instance_ip_add" {
+values = aws_instance.server.private_ip
+}
+
+Suppressing Output values in CLI Output
+An output can be marked as containing sensituve material using the optional sensitive arguments
+output "db_password" {
+  value = aws_db_instance.db.password
+  sensitive = true
+}
+Note:- Senstive ouputs are still visible to anyone who can acess the state file 
+
+Module version 
+Its recommended that explictily mention the module version  for each external modules
+Note:- Version constrains are supported only for modules installed form module registry 
+such as Terraform regustry or Terraform cloud private module registry 
+module "consul" {
+     source = "hashicorp/consol/aws"
+     version  = "0.0.5"
+
+}
+
+Terraform registry
+-----------------
+Terraform registry is integrated directly with terraform
+Syntax:-
+namespace/name/provider
+exmaple:- hashicrop/consol/aws
+
+Private registery
+hostname/namespace/name/provider
+  app.terraform.io/example_corp.vpc/aws
+version ins required
+
+
+
+
