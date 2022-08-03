@@ -2,6 +2,8 @@ Terraform-init
 When you do terraform init it downloads the modules from the provider (Intialization downloads and install the provide plugin)
 It will not create any terraform files
 
+When running terraform init, the plugins are downloaded in the sub-directory of the present working directory at the path of .terraform/plugins
+
 
 Terraform plan
 I will Create a execute plan :- it will not modify the infra
