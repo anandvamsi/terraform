@@ -5,6 +5,11 @@ It will not create any terraform files
 When running terraform init, the plugins are downloaded in the sub-directory of the present working directory at the path of .terraform/plugins
 
 
+#Parallelism
+Terraform uses Parallelism to reduce the time it takes to create the resource. 
+By default, this value is set to 10
+
+
 Terraform plan
 I will Create a execute plan :- it will not modify the infra
 Terraform perform refresh unless explicity disabled and determines what action is are reqires necessary to achive the desired state 
