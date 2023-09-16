@@ -1,5 +1,5 @@
 ## Terraform
-
+- what is IaC
 - Terraform overview
 - Quick comparison with other tools
 - Terraform Architecture overview
