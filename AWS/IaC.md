@@ -20,3 +20,10 @@ Code can reused by changing the setting and provisiong the resources.
 
 - Reability
 	It is having good readbility.
+
+```hcl
+resource "aws_instance" "example" {
+  ami = "ami-40d28157"
+  instance_type = "t2.micro"
+}
+```
