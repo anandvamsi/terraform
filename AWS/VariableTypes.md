@@ -4,6 +4,7 @@
 ```hcl
 variable "private_key_path" {
   type = string
+  description = "Need of this variable"
   default = "/home/user/.ssh/terraform_rsa"
 }
 
@@ -12,6 +13,15 @@ variable "public_key" {
   default = "ssh-rsa terraform_public_key"
 }
 ```
+In this example:
+
+- `variable` is used to declare an input variable named `example_var`.
+- `description` provides a human-readable description of the variable.
+- `type` specifies the data type of the variable (e.g., `string`, `number`, `list`, `map`, etc.).
+- `default` provides a default value for the variable, which is optional
+
+
+
 - Boolean
 ```hcl
 variable "set_password" {
