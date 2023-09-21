@@ -79,3 +79,12 @@ common_tags = {
         }
 }
 ```
+
+- Output variables
+Output variables allow you to expose values from your module or configuration, making them available for use in other parts of your Terraform setup. Here's how you define an output variable:
+```hcl
+output "example_output" {
+  description = "An example output variable"
+  value       = resource.example_resource.example.id
+}
+```
