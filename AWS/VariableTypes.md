@@ -104,3 +104,44 @@ variable "image_id" {
 ```
 In the above Example checks whether the AMI ID has the correct syntax.
 Note: This feature was introduced in Terraform CLI v0.13.0.
+
+- Data sources
+Data sources provide information about entities that are not managed by the current Terraform configuration.
+
+```hcl
+data "aws_ami" "example" {
+  executable_users = ["self"]
+  most_recent      = true
+  name_regex       = "^myami-\\d{3}"
+  owners           = ["self"]
+
+  filter {
+    name   = "name"
+    values = ["myami-*"]
+  }
+
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+```
+
+Example::- Data source
+
+```hcl
+data "aws_ami" "example" {
+  most_recent = true
+
+  owners = ["self"]
+  tags = {
+    Name   = "app-server"
+    Tested = "true"
+  }
+}
+```
