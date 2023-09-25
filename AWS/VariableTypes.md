@@ -106,7 +106,9 @@ In the above Example checks whether the AMI ID has the correct syntax.
 Note: This feature was introduced in Terraform CLI v0.13.0.
 
 - Data sources
-Data sources provide information about entities that are not managed by the current Terraform configuration.
+Data sources allow data to be fetched or computed for use elsewhere in Terraform configuration.
+Use of data sources allows a Terraform configuration to make use of information defined outside of Terraform, or defined by another separate Terraform configuration
+
 
 ```hcl
 data "aws_ami" "example" {
