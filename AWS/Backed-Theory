@@ -1,5 +1,11 @@
 what is backends
 ------------------
+Join Zoom Meeting
+https://us05web.zoom.us/j/88214983418?pwd=7q9rZNjcVNzjnQaQbQImImNZedSpFY.1
+
+Meeting ID:  882 1498 3418
+Passcode: 9b3N2S
+
 A "backend" in Terraform determines how state is loaded and how an operation such as apply is executed.
 This abstraction enables non-local file state storage, remote execution, etc.
 By default, Terraform uses the "local" backend, which is the normal behavior of Terraform
